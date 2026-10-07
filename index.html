@@ -1,0 +1,1026 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Favourite Person ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    color: #5a2942;
+
+    background:
+        radial-gradient(circle at 10% 10%, #ffd9e8, transparent 25%),
+        radial-gradient(circle at 90% 90%, #e5d5ff, transparent 25%),
+        linear-gradient(135deg, #ffe8f0, #f5e6ff, #fff0f5);
+
+    overflow-x: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.card {
+    width: 100%;
+    max-width: 700px;
+    padding: 40px 28px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.92);
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 20px 60px rgba(100,30,70,0.15);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fade {
+    animation: fadeIn 0.8s ease;
+}
+
+h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+h2 {
+    font-size: 34px;
+    margin: 18px 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.small {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+button {
+    border: none;
+    padding: 15px 28px;
+    border-radius: 50px;
+
+    background: linear-gradient(135deg,#a83d6c,#d65b91);
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    margin-top: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(168,61,108,0.25);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+.big {
+    font-size: 85px;
+    margin: 10px 0;
+    animation: bounce 2s infinite;
+}
+
+.doodle {
+    margin: 25px auto;
+    padding: 18px;
+    max-width: 430px;
+
+    border-radius: 25px;
+
+    background: #fff7fb;
+
+    border: 2px dashed #e6a4c0;
+
+    font-size: 38px;
+    letter-spacing: 7px;
+}
+
+.stickers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+    margin: 25px 0;
+}
+
+.sticker {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 7px 18px rgba(100,30,70,0.12);
+
+    animation:
+        floatSticker 3s ease-in-out infinite;
+}
+
+.sticker:nth-child(2) {
+    animation-delay: .3s;
+}
+
+.sticker:nth-child(3) {
+    animation-delay: .6s;
+}
+
+.sticker:nth-child(4) {
+    animation-delay: .9s;
+}
+
+.sticker:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.message {
+    background: #fff5f9;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin: 15px 0;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    border-left: 5px solid #d65b91;
+}
+
+.long-message {
+    background:
+        linear-gradient(135deg,#fff1f6,#faf1ff);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+}
+
+.decor {
+    position: absolute;
+
+    font-size: 32px;
+
+    animation:
+        wiggle 3s ease-in-out infinite;
+}
+
+.d1 {
+    top: 15px;
+    left: 20px;
+}
+
+.d2 {
+    top: 15px;
+    right: 20px;
+}
+
+.d3 {
+    bottom: 15px;
+    left: 20px;
+}
+
+.d4 {
+    bottom: 15px;
+    right: 20px;
+}
+
+.heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation:
+        floatUp 7s linear forwards;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes wiggle {
+
+    0%,100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+}
+
+@keyframes floatSticker {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+@keyframes floatUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0.8;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+@media(max-width:500px) {
+
+    .card {
+        padding: 32px 18px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .big {
+        font-size: 70px;
+    }
+
+    .doodle {
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     PAGE 0 — OPENING
+========================= -->
+
+<section class="screen" id="page0">
+
+<div class="card fade">
+
+<div class="decor d1">🌸</div>
+<div class="decor d2">💗</div>
+<div class="decor d3">✨</div>
+<div class="decor d4">🎀</div>
+
+<div class="big">
+💌
+</div>
+
+<p class="small">
+A little surprise made specially for you...
+</p>
+
+<h1>
+Hey You ❤️
+</h1>
+
+<p>
+Don't rush... I made something for you.
+<br>
+Open it slowly. 🥹
+</p>
+
+<div class="doodle">
+💗 ✨ 🧸 ✨ 💗
+</div>
+
+<button onclick="showPage(1)">
+Open My Surprise 💝
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="screen hidden" id="page1">
+
+<div class="card fade">
+
+<div class="decor d1">🌷</div>
+<div class="decor d2">💞</div>
+
+<p class="small">
+Chapter 01
+</p>
+
+<h2>
+For My Favourite Person ❤️
+</h2>
+
+<div class="big">
+🧸💗
+</div>
+
+<div class="stickers">
+
+<div class="sticker">🌸</div>
+<div class="sticker">💗</div>
+<div class="sticker">🎀</div>
+<div class="sticker">🧸</div>
+<div class="sticker">✨</div>
+
+</div>
+
+<p>
+Pata nahi aap m aisa kya hai...
+<br>
+but somehow, itne saare logon m
+mere favourite insaan aap hi ban gaye. ❤️
+</p>
+
+<p>
+Apse baat karna, apko irritate karna,
+apki baatein sunna...
+sab kuch thoda zyada hi pasand hai mujhe.
+</p>
+
+<p>
+Aur haan,
+Apko dekh ke jo smile automatically aa jaati hai na...
+uska koi control mere paas nahi hai. 🥹❤️
+</p>
+
+<div class="doodle">
+♡ ʚɞ ♡ ʚɞ ♡
+</div>
+
+<button onclick="showPage(2)">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section class="screen hidden" id="page2">
+
+<div class="card fade">
+
+<div class="decor d1">💐</div>
+<div class="decor d2">⭐</div>
+
+<p class="small">
+Chapter 02
+</p>
+
+<h2>
+Little Things I Love About You 🫶🏻
+</h2>
+
+<div class="stickers">
+
+<div class="sticker">🥹</div>
+<div class="sticker">💗</div>
+<div class="sticker">🧸</div>
+<div class="sticker">🌷</div>
+<div class="sticker">💫</div>
+
+</div>
+
+<div class="message">
+
+Apki sabse chhoti chhoti baatein bhi
+pata nahi kyun mujhe yaad reh jaati hain. ❤️
+
+</div>
+
+<div class="message">
+
+Kabhi aap kuch stupid sa bol dete ho
+aur main bina reason ke smile karne lagti hoon.
+
+Apko shayad pata bhi nahi hota
+ki aap kitna easily mera mood theek kar skte ho. 🥹
+
+</div>
+
+<div class="message">
+
+Meri jaan mujhe apke saath perfect moments nahi chahiye.
+
+Bas woh random conversations,
+random hasi,
+random fights,
+aur woh "kya kar rahi ho mera baccha?" wale messages chahiye. 🫶🏻
+
+</div>
+
+<div class="message">
+
+Aur sach bolun?
+
+Mera favourite part ye hai
+ki aap mere favourite ho...
+
+And that's what always makes me feel complete. 😌❤️
+
+</div>
+
+<div class="doodle">
+🎀 💕 🌸 💕 🎀
+</div>
+
+<button onclick="showPage(3)">
+Keep going 💗
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<section class="screen hidden" id="page3">
+
+<div class="card fade">
+
+<div class="decor d1">💗</div>
+<div class="decor d2">🌙</div>
+
+<p class="small">
+Chapter 03
+</p>
+
+<h2>
+Things I Want You To Know 💌
+</h2>
+
+<div class="big">
+🥹💗
+</div>
+
+<div class="message">
+
+Main shayad har baar words mein nahi bol paati,
+but aap aur apki pyaari smile mere liye genuinely bohot special h.
+
+Aap meri life k woh person ho
+jiske saath baat karke din thoda better lagta hai. ❤️
+
+</div>
+
+<div class="message">
+
+Kabhi kabhi main apko irritate karti hoon,
+nakhre karti hoon,
+faltu mein ladti hoon...
+
+but us sab ke peeche ek simple si baat hai—
+
+I really, really LOVE YOU BABE aur bs mai 
+apse us waqt khud k lye aur zyada pyaar chahti hu. 🥹
+
+</div>
+
+<div class="message">
+
+Apko pata hai?
+
+Mujhe apki presence ki aadat si ho gayi hai.
+
+Aur honestly,
+ye wali aadat mujhe bilkul nahi chhodni. ❤️
+
+</div>
+
+<div class="message">
+
+Aur haan...
+
+aap mere favourite mard ho. 😌
+
+Is title ke liye competition tha hi nahi.
+
+Aap aaye aur seedha jeet gaye. 😂❤️
+
+</div>
+
+<div class="doodle">
+🧸 💕 🧸
+</div>
+
+<button onclick="showPage(4)">
+One more thing... 🥹
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<section class="screen hidden" id="page4">
+
+<div class="card fade">
+
+<div class="decor d1">🌸</div>
+<div class="decor d2">💖</div>
+
+<p class="small">
+Chapter 04
+</p>
+
+<h2>
+If I Could Give You One Thing... 🥹
+</h2>
+
+<div class="big">
+🎁💗
+</div>
+
+<div class="long-message">
+
+Agar main apko ek cheez de sakti na,
+toh main apko ek din ke liye
+meri nazar se khud ko dikhaati.
+
+<br><br>
+
+Phir aap dekhte
+ki meri nazar mein aap kitne ache ho.
+
+<br><br>
+
+Apki wo cutu si smile,
+Apki random baatein,
+Apka mujhe irritate karna,
+aur phir khud hi mujhe hasa dena...
+
+shayad apko ye sab normal lagta hai,
+but mere liye ye sab bohot special hai. ❤️
+
+<br><br>
+
+Mujhe apke saath koi
+filmy-perfect relationship nahi chahiye.
+
+<br><br>
+
+Mujhe bas aap chahiye.
+
+Thodi si nok-jhok,
+thodi si pagalpan,
+bohot saari hasi,
+bohot sara pyaar,
+late-night baatein,
+random meet up plans,
+
+aur woh chhote chhote moments
+jinhe baad mein yaad karke
+hum dono bina reason smile karein.
+
+<br><br>
+
+Bas aise hi rhyega...
+
+mere favourite jaanu,
+mere babuaa, mere babiyaaa
+aur mere favourite mard. 🥹❤️
+
+</div>
+
+<div class="doodle">
+🌷 ✨ 💗 ✨ 🌷
+</div>
+
+<button onclick="showPage(5)">
+There's a little more... 💝
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 5
+========================= -->
+
+<section class="screen hidden" id="page5">
+
+<div class="card fade">
+
+<div class="decor d1">🎀</div>
+<div class="decor d2">💗</div>
+<div class="decor d3">🌸</div>
+<div class="decor d4">✨</div>
+
+<p class="small">
+A little message for you...
+</p>
+
+<div class="big">
+🎀🧸🎀
+</div>
+
+<h2>
+Happy Boyfriend's Day ❤️
+</h2>
+
+<div class="doodle">
+💗 ✨ 🧸 ✨ 💗
+</div>
+
+<p>
+Happy Boyfriend's Day mere Bachwaaaaa. ❤️
+</p>
+
+<p>
+I know jaani k thoda cheesy lagega,
+but honestly aap meri life m
+un logon mein se ho
+jinke hone se cheezein thodi better lagti hain.
+</p>
+
+<p>
+Apke saath mujhe har waqt
+kuch special karne ki zarurat nahi lagti.
+
+Kabhi bas aapse baat karna hi enough hota hai. 🫶🏻
+</p>
+
+<p>
+Thank you for being there,
+meri bakwaas sunne ke liye,
+mujhe tolerate karne ke liye,
+aur sabse zyada...
+mujhe itna smile karwane ke liye. 🥹❤️
+</p>
+
+<h2>
+I Love You sooo much Guddaaa❤️
+</h2>
+
+<p>
+Aur haan,
+agar kabhi doubt ho na
+ki aap mere favourite ho ya nhi ya mere lye important ho ya nhi...
+
+toh ye poori website dobara padhyega ya mere ps aa jaiyega dauuurrrr kr. 😌🎀
+</p>
+
+<button onclick="showPage(6)">
+Wait... one last thing 🥹
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 6 — LATE
+========================= -->
+
+<section class="screen hidden" id="page6">
+
+<div class="card fade">
+
+<div class="decor d1">🌸</div>
+<div class="decor d2">💗</div>
+<div class="decor d3">✨</div>
+<div class="decor d4">🎀</div>
+
+<p class="small">
+Okay... now the actual last page 🥹
+</p>
+
+<div class="big">
+🥹💗
+</div>
+
+<h2>
+I'm Sorry It's Late... 🥺
+</h2>
+
+<div class="long-message">
+
+Okay...
+
+ab thoda sa sorry bolna banta hai. 🥹
+
+<br><br>
+
+I know Boyfriend's Day nikal gaya
+aur main ye sab ab bhej rahi hoon.
+
+<br><br>
+
+Thodi late ho gyi shonaaa
+
+ya bolu to bht late ho gyi 😭😂❤️
+
+<br><br>
+
+But sach bolun,
+main apko aise khud se bna kr wish kiye bina
+is moment ko bas jaane nahi dena chahti thi.
+
+<br><br>
+
+Isliye socha,
+late hi sahi,
+but kuch aisa banaun jo khaas apke liye ho.
+
+<br><br>
+
+Shayad ye message time pe nahi aaya,
+but jo feelings hain na,
+woh bilkul time pe babiyaaa mefe
+
+<br><br>
+
+Aap mere liye special the,
+special ho aur.....
+aur bhi zyada special hote ja rahe ho. 🥹❤️
+
+<br><br>
+
+Toh sorry for being late...
+
+<br><br>
+
+but please ye na sochnyega
+ki aap mere liye kam important ho.
+
+<br><br>
+
+Actually problem toh ye hai
+ki aap mere liye itne important ho
+k us din ka simple sa "Happy Boyfriend's Day"
+likh ke mera mann hi nahi maana. 🫶🏻
+
+<br><br>
+
+Isliye thodi mehnat to bnti h
+merii jaaaan ki pyaari smile dekhne k lye🎀❤️
+
+<br><br>
+
+<strong>
+Sorry for being late...
+but never sorry for loving you Sweetuuuu. ❤️
+</strong>
+
+</div>
+
+
+<div class="stickers">
+
+<div class="sticker">🥺</div>
+<div class="sticker">🎀</div>
+<div class="sticker">🧸</div>
+<div class="sticker">💗</div>
+<div class="sticker">🌷</div>
+
+</div>
+
+
+<p>
+Aur ab smile kijye pyaari wali..
+
+jii haa, aap hi merii jaaan. 👀
+</p>
+
+<p>
+Itne pyaar se banaya h maine,
+ab ek cute si smile toh banti hai. 😌❤️
+</p>
+
+<p>
+Waise bhi...
+
+mera pasandida mard
+smile karta hua
+zyada handsome lagta hai. 🤭
+</p>
+
+
+<h2>
+I Love You sooo much Infinity times wala Mere Shehzade. ❤️
+</h2>
+
+
+<p class="small">
+— Apki thodi si pagal,
+thodi si late,
+but aapse bht zyada pyaar karne wali apki shoniii. 🎀❤️
+</p>
+
+
+<div class="doodle">
+♡ ʚɞ 💕 ʚɞ ♡
+</div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* PAGE NAVIGATION */
+
+function showPage(number) {
+
+    document.querySelectorAll(".screen").forEach(function(page) {
+
+        page.classList.add("hidden");
+
+    });
+
+    const selectedPage =
+        document.getElementById("page" + number);
+
+    selectedPage.classList.remove("hidden");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💞",
+        "💓",
+        "🌸",
+        "✨",
+        "🎀"
+    ];
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (16 + Math.random() * 18) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 10000);
+
+}
+
+setInterval(createHeart, 650);
+
+</script>
+
+</body>
+</html>
+```
